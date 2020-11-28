@@ -127,9 +127,9 @@ function get_point(object) {
 // Crossroads
 var cross_road = {
     a: {b: [[405, 375, 110, 'road']], c: [[425.90234375, 418.72265625, 18, 'road']]},
-    d: {a: [[375, 425, 90, 'road'], [425, 425, 90, 'road']], b: [[350, 400, 0, 'road']], e: [[375, 375, 90, 'road'], [425, 375, 90, 'road']], i: [[450, 400, 0, 'road']]},
-    e: {c: [[350, 300, 0, 'road']], d: [[375, 325, 90, 'road'], [425, 325, 90, 'road']], f: [[375, 275, 90, 'road'], [425, 275, 90, 'road']], j: [[450, 300, 0, 'road']]},
-    f: {e: [[375, 225, 90, 'road'], [425, 225, 90, 'road']], g: [[375, 175, 90, 'road'], [425, 175, 90, 'road']], o: [[450, 200, 0, 'road']]},
+    b: {a: [[425.01171875, 309.33984375, 108, 'road']], e: [[485.875, 294.53125, 13, 'road']]},
+    e: {b: [[485.875, 294.53125, 13, 'road']], d: [[544.18359375, 311.28125, 40, 'road']], f: [[375, 275, 90, 'road'], [425, 275, 90, 'road']], j: [[450, 300, 0, 'road']]},
+    f: {e: [[528.70703125, 277.87890625, 110, 'road']], m: [[577.578125, 207.59765625, 10, 'road']], g: [[546.1328125, 161.70703125, 110, 'road']]},
     i: {d: [[500, 400, 0, 'road']], h: [[525, 425, 90, 'road']], j: [[525, 375, 90, 'road']], k: [[550, 400, 0, 'road']]},
     j: {e: [[500, 300, 0, 'road']], i: [[525, 325, 90, 'road']], k: [[550, 300, 0, 'road']]},
     k: {i: [[625, 362.5, -63.435, 'diagonal_road']], j: [[625, 337.5, 63.435, 'diagonal_road']], n: [[650, 350, 0, 'road']]},
@@ -160,7 +160,10 @@ function make_way(start, finish) {
 
         var passed_point = close_point[cross_point-1];
 
+        console.log('cross_point', cross_point);
+        console.log('letter_point(cross_point)', letter_point(cross_point))
         cross_way = cross_road[letter_point(cross_point)];
+        console.log('cross_way', cross_way);
 
         accepted_ways = [letter_point(finish), letter_point(passed_point)];
         disaccepted_ways = minus_two_array(Object.keys(cross_way), accepted_ways)
@@ -182,7 +185,8 @@ function make_barrier(barriers) {
 }
 
 function letter_point(n) {
-    return String.fromCharCode(96 + n)
+    const letters = ['x', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k', 'l', 'm', 'n' ,'o', 'p', 'q', 'r', 's', 't', 'u', 'v']
+    return letters[n-1]
 }
 
 function minus_two_array(m, n){
