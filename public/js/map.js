@@ -1,6 +1,17 @@
 // Building road (x, y, angle, 'image')
 function building_road() {
+    const road_map = [
+        // [405, 375, 110, 'road'], // a -> b
+        // [425.90234375, 418.72265625, 18, 'road'], // a -> c
+        // [425.01171875, 309.33984375, 108, 'road'], // b -> a
+        // [485.875, 294.53125, 13, 'road'], // b -> e
+        // [544.18359375, 311.28125, 40, 'road'], // e -> d
+        // [528.70703125, 277.87890625, 110, 'road'] // e -> f
+    ]
     obstacle_group = game.add.group(); 
+    for (var i = 0; i < road_map.length; i++){
+        create_a_fence(road_map[i])
+    }
 }
 
 // Automatic car

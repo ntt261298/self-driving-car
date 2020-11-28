@@ -67,7 +67,7 @@ function update() {
 
 // ----------support function ------------
 function findingWayOnClick() {
-    find_way(1, 16);
+    find_way();
 }
 
 function startOnClick () {

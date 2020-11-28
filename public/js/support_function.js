@@ -15,6 +15,7 @@ function set_up_dragging_object() {
 function click(pointer) {
     var bodies = game.physics.p2.hitTest(pointer.position, [auto_car.body, goal.body, obstacle1.body, obstacle2.body, obstacle3.body, obstacle4.body]);
     
+    console.log('Position X: ', pointer.position.x, ' Position Y: ', pointer.position.y)
     // p2 uses different coordinate system, so convert the pointer position to p2's coordinate system
     var physicsPos = [game.physics.p2.pxmi(pointer.position.x), game.physics.p2.pxmi(pointer.position.y)];
     
