@@ -21,6 +21,8 @@ function preload () {
     game.load.image('auto_car', '../assets/images/auto_car.jpg');
     game.load.image('diagonal_road', '../assets/images/diagonal_road.jpg');
     game.load.image('road', '../assets/images/road.jpg');
+    game.load.image('road_longer', '../assets/images/road_longer.jpg');
+    game.load.image('road_longest', '../assets/images/road_longest.jpg');
     game.load.image('bar', '../assets/images/bar.jpg');
     game.load.image('goal', '../assets/images/goal.jpg');
     game.load.image('button', '../assets/images/button.png');
