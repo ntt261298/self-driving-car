@@ -60,7 +60,7 @@ function set_up_screen() {
     creating_goal(100, 150);
 
     // Auto car
-    creating_autocar(270, 360, 110);
+    creating_autocar(280.9, 512.4, 110);
 
     // Findding way button
     var button = game.add.button(25, 400, 'findwaw_button', findingWayOnClick, this);
