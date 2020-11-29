@@ -71,7 +71,7 @@ function set_up_screen() {
     button.scale.set(0.4);
     
 
-    for (var i = 0; i < 15; i++){
+    for (var i = 0; i < 25; i++){
         var bar = game.add.sprite(200, i*50, 'bar');
         bar.scale.set(0.5);
     }

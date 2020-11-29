@@ -73,7 +73,8 @@ function findingWayOnClick() {
 }
 
 function startOnClick () {
-    switch_auto_driving = true;
+    // to be updated
+    // switch_auto_driving = true;
 }
 
 // Collision function
