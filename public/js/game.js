@@ -1,4 +1,4 @@
-var game = new Phaser.Game(1400, 800, Phaser.CANVAS, 'automatic_car', { preload: preload, create: create, update: update});
+var game = new Phaser.Game(1800, 900, Phaser.CANVAS, 'automatic_car', { preload: preload, create: create, update: update});
 
 var cursors;
 
