@@ -11,6 +11,12 @@ function building_road() {
         // [528.70703125, 277.87890625, 110, 'road'], // f -> e
         // [577.578125, 207.59765625, 10, 'road'], // f -> m
         // [546.1328125, 161.70703125, 110, 'road'], // f -> 
+
+        [435, 566, 18, 'road'],
+        [524, 596, 18, 'road'],
+        [617, 628, 18, 'road'],
+        [705, 658, 18, 'road'],
+        [851, 708, 18, 'road'],
     ]
     obstacle_group = game.add.group(); 
     for (var i = 0; i < road_map.length; i++){
@@ -49,7 +55,7 @@ function creating_goal(x, y) {
 function create_a_fence(road_map){
     var fence = game.add.sprite(road_map[0], road_map[1], road_map[3]);
     fence.anchor.set(0.5);
-    fence.scale.set(0.5);
+    fence.scale.set(1);
 
     game.physics.p2.enable(fence, false);
     fence.body.angle += road_map[2];
