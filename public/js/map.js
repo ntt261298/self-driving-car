@@ -175,16 +175,16 @@ var obstacle3;
 var obstacle4;
 
 function creating_obstacles(x, y) {
-   obstacle1 = game.add.sprite(25, 50, 'obstacle');
+   obstacle1 = game.add.sprite(25, 100, 'obstacle');
    obstacle1.scale.set(0.25);
 
-   obstacle2 = game.add.sprite(75, 50, 'obstacle');
+   obstacle2 = game.add.sprite(75, 100, 'obstacle');
    obstacle2.scale.set(0.25);
 
-   obstacle3 = game.add.sprite(125, 50, 'obstacle');
+   obstacle3 = game.add.sprite(125, 100, 'obstacle');
    obstacle3.scale.set(0.25);
    
-   obstacle4 = game.add.sprite(175, 50, 'obstacle');
+   obstacle4 = game.add.sprite(175, 100, 'obstacle');
    obstacle4.scale.set(0.25);
    
    game.physics.p2.enable([obstacle1, obstacle2, obstacle3, obstacle4], false);

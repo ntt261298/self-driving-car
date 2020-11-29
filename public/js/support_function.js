@@ -57,17 +57,21 @@ function set_up_screen() {
     creating_obstacles(25, 50);
 
     // Goal
-    creating_goal(100, 150);
+    creating_goal(100, 200);
 
     // Auto car
     creating_autocar(280.9, 512.4, 110);
 
     // Findding way button
-    var button = game.add.button(25, 400, 'findwaw_button', findingWayOnClick, this);
+    var button = game.add.button(25, 500, 'find', findingWayOnClick, this);
     button.scale.set(0.4);
 
-    // Start button
-    var button = game.add.button(25, 500, 'button', startOnClick, this);
+    // Run
+    var button = game.add.button(25, 600, 'run', startOnClick, this);
+    button.scale.set(0.4);
+
+    //Reload
+    var button = game.add.button(25, 700, 'reload', reloadOnClick, this);
     button.scale.set(0.4);
     
 

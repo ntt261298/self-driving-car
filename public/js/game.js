@@ -16,7 +16,7 @@ var goalCollisionGroup;
 
 // Reloading all resources of the game
 function preload () {
-    game.load.image('background', '../assets/images/background.png');
+    game.load.image('background', '../assets/images/map.png');
     game.load.image('obstacle', '../assets/images/obstacle.jpg');
     game.load.image('auto_car', '../assets/images/auto_car.jpg');
     game.load.image('diagonal_road', '../assets/images/diagonal_road.jpg');
@@ -25,9 +25,9 @@ function preload () {
     game.load.image('road_longest', '../assets/images/road_longest.jpg');
     game.load.image('bar', '../assets/images/bar.jpg');
     game.load.image('goal', '../assets/images/goal.jpg');
-    game.load.image('button', '../assets/images/button.png');
-    game.load.image('findwaw_button', '../assets/images/findwaw_button.png');
-
+    game.load.image('run', '../assets/images/run.png');
+    game.load.image('find', '../assets/images/find.png');
+    game.load.image('reload', '../assets/images/reload.png');
     game.load.image('kaboom', '../assets/images/kaboom.jpg');
     game.load.image('signal', '../assets/images/signal.jpg');
     game.load.spritesheet('traffic_light_test', '../assets/images/traffic_light.png', 10, 100, 20);
@@ -72,9 +72,13 @@ function findingWayOnClick() {
     find_way();
 }
 
-function startOnClick () {
+function startOnClick() {
     // to be updated
     // switch_auto_driving = true;
+}
+
+function reloadOnClick() {
+    location.reload();
 }
 
 // Collision function
