@@ -1,4 +1,4 @@
-var game = new Phaser.Game(1800, 900, Phaser.CANVAS, 'automatic_car', { preload: preload, create: create, update: update});
+var game = new Phaser.Game(4450, 2250, Phaser.CANVAS, 'automatic_car', { preload: preload, create: create, update: update});
 
 var cursors;
 
@@ -35,12 +35,12 @@ function preload () {
 
 // Creating some objects in the map
 function create () {
+    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     game.physics.startSystem(Phaser.Physics.P2JS);
     game.physics.p2.setImpactEvents(true);
     game.physics.p2.restitution = 0;
 
     set_up_collision_group()
-
     set_up_screen()
     set_up_dragging_object()
     // set up signal to automatic finding way
@@ -74,7 +74,7 @@ function findingWayOnClick() {
 
 function startOnClick() {
     // to be updated
-    // switch_auto_driving = true;
+    switch_auto_driving = true;
 }
 
 function reloadOnClick() {
@@ -101,7 +101,7 @@ function game_over(object) {
 
     var explosion = game.add.sprite(object.x, object.y, 'kaboom');
     explosion.anchor.set(0.5);
-    explosion.scale.set(0.2);
+    explosion.scale.set(0.3);
     setTimeout(function () {
         explosion.kill();
     }, 700);

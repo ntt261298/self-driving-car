@@ -1,17 +1,6 @@
 // Building road (x, y, angle, 'image')
 function building_road() {
     const road_map = [
-        // [405, 375, 110, 'road'], // a -> b
-        // [425.90234375, 418.72265625, 18, 'road'], // a -> c
-        // [425.01171875, 309.33984375, 108, 'road'], // b -> a
-        // [485.875, 294.53125, 13, 'road'], // b -> e
-        // [485.875, 294.53125, 13, 'road'], // e -> b
-        // [544.18359375, 311.28125, 40, 'road'], // e -> d
-        // [528.70703125, 277.87890625, 110, 'road'], // e -> f
-        // [528.70703125, 277.87890625, 110, 'road'], // f -> e
-        // [577.578125, 207.59765625, 10, 'road'], // f -> m
-        // [546.1328125, 161.70703125, 110, 'road'], // f -> 
-
         // [435, 566, 18, 'road'], //1
         // [496, 537, 109, 'road'], //2
         // [524, 597, 18, 'road'], //3
@@ -73,7 +62,7 @@ function building_road() {
 function creating_autocar(x, y, angle) {
     auto_car = game.add.sprite(x, y, 'auto_car');
     auto_car.anchor.set(0.5);
-    auto_car.scale.set(0.14);
+    auto_car.scale.set(0.1);
 
     game.physics.p2.enable(auto_car, false);
     auto_car.body.angle = angle;
@@ -86,7 +75,7 @@ function creating_autocar(x, y, angle) {
 function creating_goal(x, y) {
     goal = game.add.sprite(x, y, 'goal');
     goal.anchor.set(0.5);
-    goal.scale.set(0.3);
+    goal.scale.set(0.5);
     
     game.physics.p2.enable(goal, false);
     goal.body.setCollisionGroup(goalCollisionGroup);
@@ -174,17 +163,17 @@ var obstacle2;
 var obstacle3;
 var obstacle4;
 
-function creating_obstacles(x, y) {
-   obstacle1 = game.add.sprite(25, 100, 'obstacle');
+function creating_obstacles() {
+   obstacle1 = game.add.sprite(200, 200, 'obstacle');
    obstacle1.scale.set(0.25);
 
-   obstacle2 = game.add.sprite(75, 100, 'obstacle');
+   obstacle2 = game.add.sprite(200, 300, 'obstacle');
    obstacle2.scale.set(0.25);
 
-   obstacle3 = game.add.sprite(125, 100, 'obstacle');
+   obstacle3 = game.add.sprite(200, 400, 'obstacle');
    obstacle3.scale.set(0.25);
    
-   obstacle4 = game.add.sprite(175, 100, 'obstacle');
+   obstacle4 = game.add.sprite(200, 500, 'obstacle');
    obstacle4.scale.set(0.25);
    
    game.physics.p2.enable([obstacle1, obstacle2, obstacle3, obstacle4], false);
