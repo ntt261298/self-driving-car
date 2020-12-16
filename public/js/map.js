@@ -65,6 +65,8 @@ function creating_autocar(x, y, angle) {
     auto_car.scale.set(0.1);
 
     game.physics.p2.enable(auto_car, false);
+    game.camera.follow(auto_car, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
+
     auto_car.body.angle = angle;
     auto_car.body.setCollisionGroup(carCollisionGroup);
     auto_car.body.collides(obstacleCollisionGroup, car_obstacle_collisionHandler, this);
@@ -83,6 +85,8 @@ function creating_goal(x, y) {
 
     goal.body.setZeroDamping();
     goal.body.fixedRotation = true;
+
+    game.camera.follow(auto_car); // Custom
 }
 
 // Fences to make road

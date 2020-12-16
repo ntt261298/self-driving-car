@@ -1,7 +1,6 @@
-var game = new Phaser.Game(4450, 2250, Phaser.CANVAS, 'automatic_car', { preload: preload, create: create, update: update});
+var game = new Phaser.Game(1600, 900, Phaser.CANVAS, 'automatic_car', { preload: preload, create: create, update: update });
 
 var cursors;
-
 var auto_car;
 var obstacle_group;
 var trafficLight_group;
@@ -15,7 +14,7 @@ var carCollisionGroup;
 var goalCollisionGroup;
 
 // Reloading all resources of the game
-function preload () {
+function preload() {
     game.load.image('background', '../assets/images/map.png');
     game.load.image('obstacle', '../assets/images/obstacle.jpg');
     game.load.image('auto_car', '../assets/images/auto_car.jpg');
@@ -34,8 +33,7 @@ function preload () {
 }
 
 // Creating some objects in the map
-function create () {
-    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+function create() {
     game.physics.startSystem(Phaser.Physics.P2JS);
     game.physics.p2.setImpactEvents(true);
     game.physics.p2.restitution = 0;
@@ -51,17 +49,34 @@ function create () {
 
 // Updating objects and map when we have something changed
 function update() {
+    game.scale.pageAlignHorizontally = true;
+    game.scale.pageAlignVertically = true;
+    game.scale.refresh();
     if (switch_auto_driving === false) {
         // driving by yourself
         self_driving();
-    }else{
+    } else {
         //keep box obstacle imovable after dragging
         obstacle1.body.static = true
         obstacle2.body.static = true
         obstacle3.body.static = true
         obstacle4.body.static = true
         //automatic driving
-        automatic_finding_way ()
+        automatic_finding_way()
+    }
+
+    if (cursors.up.isDown) {
+        auto_car.body.moveUp(300)
+    }
+    else if (cursors.down.isDown) {
+        auto_car.body.moveDown(300);
+    }
+
+    if (cursors.left.isDown) {
+        auto_car.body.velocity.x = -300;
+    }
+    else if (cursors.right.isDown) {
+        auto_car.body.moveRight(300);
     }
 
 }
@@ -82,13 +97,13 @@ function reloadOnClick() {
 }
 
 // Collision function
-function get_to_goal_collisionHandler (body1, body2) {
+function get_to_goal_collisionHandler(body1, body2) {
     console.log("Finished !!")
     goal.kill();
 
     game_over(goal);
 }
-function car_obstacle_collisionHandler (body1, body2) {
+function car_obstacle_collisionHandler(body1, body2) {
     console.log("Boommmm !!")
     // auto_car.kill();
 
