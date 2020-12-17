@@ -1,4 +1,4 @@
-var game = new Phaser.Game(1600, 900, Phaser.CANVAS, 'automatic_car', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(4450, 2250, Phaser.CANVAS, 'automatic_car', { preload: preload, create: create, update: update });
 
 var cursors;
 var auto_car;
@@ -19,9 +19,12 @@ function preload() {
     game.load.image('obstacle', '../assets/images/obstacle.jpg');
     game.load.image('auto_car', '../assets/images/auto_car.jpg');
     game.load.image('diagonal_road', '../assets/images/diagonal_road.jpg');
-    game.load.image('road', '../assets/images/road.jpg');
-    game.load.image('road_longer', '../assets/images/road_longer.jpg');
-    game.load.image('road_longest', '../assets/images/road_longest.jpg');
+    game.load.image('35road', '../assets/images/35road.jpg');
+    game.load.image('90road', '../assets/images/90road.jpg');
+    game.load.image('216road', '../assets/images/216road.jpg');
+    game.load.image('330road', '../assets/images/330road.jpg');
+    game.load.image('400road', '../assets/images/400road.jpg');
+    game.load.image('780road', '../assets/images/780road.jpg');
     game.load.image('bar', '../assets/images/bar.jpg');
     game.load.image('goal', '../assets/images/goal.jpg');
     game.load.image('run', '../assets/images/run.png');
@@ -34,6 +37,7 @@ function preload() {
 
 // Creating some objects in the map
 function create() {
+    // game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     game.physics.startSystem(Phaser.Physics.P2JS);
     game.physics.p2.setImpactEvents(true);
     game.physics.p2.restitution = 0;
