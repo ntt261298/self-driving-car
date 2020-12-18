@@ -45,7 +45,8 @@ function move(pointer) {
 // set up screen
 function set_up_screen() {
     game.stage.backgroundColor = '#ffffff';
-    background = game.add.sprite(205, 0, 'background');
+    background = game.add.tileSprite(405, 0, 4450, 2250, 'background'); // Custom
+    game.world.setBounds(0, 0, 4450, 2250); // Custom
 
     // Roads
     building_road();
@@ -54,29 +55,33 @@ function set_up_screen() {
     // building_trafficLight();
 
     // Obstacles
-    creating_obstacles(25, 50);
+    creating_obstacles();
 
     // Goal
-    creating_goal(100, 150);
+    creating_goal(200, 800);
 
     // Auto car
-    creating_autocar(280.9, 512.4, 110);
+    creating_autocar(200, 650, 90);
 
     // Findding way button
-    var button = game.add.button(25, 400, 'findwaw_button', findingWayOnClick, this);
-    button.scale.set(0.4);
+    var button = game.add.button(48, 1300, 'find', findingWayOnClick, this);
+    button.scale.set(0.8);
 
-    // Start button
-    var button = game.add.button(25, 500, 'button', startOnClick, this);
-    button.scale.set(0.4);
+    // Run
+    var button = game.add.button(48, 1500, 'run', startOnClick, this);
+    button.scale.set(0.8);
+
+    //Reload
+    var button = game.add.button(48, 1700, 'reload', reloadOnClick, this);
+    button.scale.set(0.8);
     
 
-    for (var i = 0; i < 15; i++){
-        var bar = game.add.sprite(200, i*50, 'bar');
+    for (var i = 0; i < 45; i++){
+        var bar = game.add.sprite(400, i*50, 'bar');
         bar.scale.set(0.5);
     }
-    for (var i = 0; i < 5; i++){
-        var bar = game.add.sprite(i*50, 370, 'bar');
+    for (var i = 0; i < 9; i++){
+        var bar = game.add.sprite(i*50, 1000, 'bar');
         bar.angle += 90
         bar.scale.set(0.5);
     }
