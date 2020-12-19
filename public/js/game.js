@@ -15,7 +15,7 @@ var goalCollisionGroup;
 
 // Reloading all resources of the game
 function preload() {
-    game.load.image('background', '../assets/images/map.png');
+    game.load.image('background', '../assets/images/map_dev.png');
     game.load.image('obstacle', '../assets/images/obstacle.jpg');
     game.load.image('auto_car', '../assets/images/auto_car.jpg');
     game.load.image('diagonal_road', '../assets/images/diagonal_road.jpg');
