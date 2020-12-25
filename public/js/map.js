@@ -336,7 +336,6 @@ function creating_goal(x, y) {
 
 // Fences to make road
 function create_a_fence(road_map) {
-    console.log('road_map: ', road_map);
     var fence = game.add.sprite(road_map[0], road_map[1], road_map[3]);
     fence.anchor.set(0.5);
     fence.scale.set(1);

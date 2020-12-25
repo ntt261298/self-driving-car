@@ -112,10 +112,10 @@ var crossroad_coordinate = [
     [3358.6, 1455.5], //o
     [3291.8, 1596.7], //p
     [3225.1, 1591.5], //q
-    [3319.7, 1756.9], //t
     [3401.3, 2097.6], //r
-    [3705.2, 1366], //u
     [4300.7, 1246.5], //s
+    [3319.7, 1756.9], //t
+    [3705.2, 1366], //u
     [3913.6, 689], //v
     [3617.1, 1066.9], //w
     [3120.6, 1204.1], //x
@@ -195,7 +195,7 @@ var cross_road = {
     t: { p: [[3314, 1736, 110, '35road']], r: [[322, 1769, 110, '35road']], u: [[3339, 1758, -18, '35road']] },
     u: { o: [[3689, 1367, -15, '90road']], t: [[3715, 1400, 80, '35road']], s: [[3721, 1358, -18, '90road']], w: [[3696, 1334, 80, '35road']] },
     v: { s: [[3919, 700, 74, '90road']], z: [[3872, 699, -25, '35road']], aa: [[3907, 676, 74, '90road']] },
-    w: { u: [[3618, 1082, 80, '35road']], n: [[3610, 1105, -15, '35road']], x: [[3601, 1074, -15, '35road']], z: [[3614, 1054, 80, '35road']] },
+    w: { u: [[3627, 1105, 43, '35road']], n: [[3610, 1105, -15, '35road']], x: [[3601, 1074, -15, '35road']], z: [[3614, 1054, 80, '35road']] },
     x: { m: [[3123, 1218, 80, '35road']], w: [[3137, 1199, -15, '35road']], y: [[3114, 1187, 74, '35road']] },
     y: { x: [[3036, 930, 90, '35road']], z: [[3050, 910, -20, '35road']], ag: [[3007, 909, -18, '35road']], af: [[3023, 896, 100, '35road']] },
     z: { v: [[3554, 779, -15, '35road']], y: [[3521, 785, -15, '35road']], w: [[3542, 797, 78, '35road']], ab: [[3534, 767, 78, '35road']] },
@@ -244,7 +244,7 @@ function make_way(start, finish) {
         }
 
         accepted_ways = [letter_point(finish), letter_point(passed_point)];
-        disaccepted_ways = minus_two_array(Object.keys(cross_way), accepted_ways)
+        disaccepted_ways = minus_two_array(Object.keys(cross_way), accepted_ways);
 
         for (var j = 0; j < disaccepted_ways.length; j++) {
             make_barrier(cross_way[disaccepted_ways[j]])
