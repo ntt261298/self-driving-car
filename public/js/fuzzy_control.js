@@ -341,6 +341,59 @@ function choosing_distance_trafficlight_speed_rules(distance, light_distance, li
             }
         }
     }
+    if (is_yellow(light_status)){
+        if(is_far(light_distance)){
+            if(is_far(distance)) {
+                var [weight, result] = rule28(distance, light_distance, light_status);
+                result_numerator += weight*result;
+                result_denominator += weight
+            }
+            if(is_medium(distance)){
+                var [weight, result] = rule29(distance, light_distance, light_status);
+                result_numerator += weight*result;
+                result_denominator += weight
+            }
+            if(is_close(distance)){
+                var [weight, result] = rule30(distance, light_distance, light_status);
+                result_numerator += weight*result;
+                result_denominator += weight
+            }
+        }
+        if(is_medium(light_distance)){
+            if(is_far(distance)) {
+                var [weight, result] = rule31(distance, light_distance, light_status);
+                result_numerator += weight*result;
+                result_denominator += weight
+            }
+            if(is_medium(distance)){
+                var [weight, result] = rule32(distance, light_distance, light_status);
+                result_numerator += weight*result;
+                result_denominator += weight
+            }
+            if(is_close(distance)){
+                var [weight, result] = rule33(distance, light_distance, light_status);
+                result_numerator += weight*result;
+                result_denominator += weight
+            }
+        }
+        if(is_close(light_distance)){
+            if(is_far(distance)) {
+                var [weight, result] = rule34(distance, light_distance, light_status);
+                result_numerator += weight*result;
+                result_denominator += weight
+            }
+            if(is_medium(distance)){
+                var [weight, result] = rule35(distance, light_distance, light_status);
+                result_numerator += weight*result;
+                result_denominator += weight
+            }
+            if(is_close(distance)){
+                var [weight, result] = rule36(distance, light_distance, light_status);
+                result_numerator += weight*result;
+                result_denominator += weight
+            }
+        }
+    }
     if(is_red(light_status)){
         if(is_far(light_distance)){
             if(is_far(distance)) {
@@ -932,10 +985,21 @@ function lessgreen_light(light_status) {
 }
 function red_light(light_status) {
     var u = 0
-    if (light_status >= 15){
+    if (light_status >= 25){
         u = 1;
     }else {
+        u = (light_status-15)/5;
+    }
+
+    return u
+}
+
+function yellow_light(light_status) {
+    var u = 0
+    if (light_status <= 15){
         u = (light_status-10)/5;
+    }else {
+        u = (20-light_status)/5;
     }
 
     return u
@@ -943,7 +1007,10 @@ function red_light(light_status) {
 
 // ---
 function is_red(ls) {
-    return ls > 10
+    return ls > 15
+}
+function is_yellow(ls) {
+    return ls < 20 && ls  > 10
 }
 function is_green(ls) {
     return ls < 10
