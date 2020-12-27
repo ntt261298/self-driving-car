@@ -51,8 +51,11 @@ function set_up_screen() {
     // Roads
     building_road();
 
-    // Traffic lights
-    // building_trafficLight();
+    // Traffic light lines
+    building_trafficLight();
+
+    // Traffic light images
+    building_trafficLightImg();
 
     // Obstacles
     creating_obstacles();

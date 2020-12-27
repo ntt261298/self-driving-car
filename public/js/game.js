@@ -15,7 +15,7 @@ var goalCollisionGroup;
 
 // Reloading all resources of the game
 function preload() {
-    game.load.image('background', '../assets/images/map_dev.png');
+    game.load.image('background', '../assets/images/map.png');
     game.load.image('obstacle', '../assets/images/obstacle.jpg');
     game.load.image('auto_car', '../assets/images/auto_car.jpg');
     game.load.image('diagonal_road', '../assets/images/diagonal_road.jpg');
@@ -32,7 +32,8 @@ function preload() {
     game.load.image('reload', '../assets/images/reload.png');
     game.load.image('kaboom', '../assets/images/kaboom.jpg');
     game.load.image('signal', '../assets/images/signal.jpg');
-    game.load.spritesheet('traffic_light_test', '../assets/images/traffic_light.png', 10, 100, 20);
+    game.load.spritesheet('traffic_light_test', '../assets/images/traffic_light.png', 10, 100, 22);
+    game.load.spritesheet('traffic_light_img', '../assets/images/traffic_light_img.png', 40, 90, 22);
 }
 
 // Creating some objects in the map
