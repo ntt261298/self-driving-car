@@ -363,24 +363,24 @@ var trafficLight_position = [
     [1832, 1088, 10, greenLight],
     [1801, 1110, 110, greenLight],
     //f
-    [1689, 1560, 10, greenLight],
-    [1710, 1545, 105, greenLight],
-    [1726, 1573, 10, greenLight],
+    [1689, 1560, 10, yellowLight],
+    [1710, 1545, 105, yellowLight],
+    [1726, 1573, 10, yellowLight],
     //g 
-    [2528, 1326, 108, greenLight],
-    [2557, 1300, 17, greenLight],
-    [2548, 1260, 108, greenLight],
-    [2521, 1287, 17, greenLight],
+    [2528, 1324, 108, redLight],
+    [2557, 1300, 17, redLight],
+    [2548, 1262, 108, redLight],
+    [2521, 1287, 17, redLight],
     //y
     [3050, 910, -20, greenLight],
     [3023, 896, 100, greenLight],
     [3007, 909, -18, greenLight],
     [3036, 930, 90, greenLight],
     //ae
-    [2791, 438, 85, greenLight],
-    [2768, 453, 10, greenLight],
-    [2807, 456, 10, greenLight],
-    [2784, 472, 90, greenLight],
+    [2791, 438, 85, yellowLight],
+    [2768, 453, 10, yellowLight],
+    [2807, 456, 10, yellowLight],
+    [2784, 472, 90, yellowLight],
 
 ];
 
@@ -388,13 +388,13 @@ var trafficLightImg_position = [
     //e
     [1775, 982, 0, greenLight],
     //f
-    [1676, 1472, 0, greenLight],
+    [1676, 1472, 0, yellowLight],
     //g
-    [2510, 1189, 0, greenLight],
+    [2510, 1189, 0, redLight],
     //y
     [3061, 838, 0, greenLight],
     //ae
-    [2739, 372, 0, greenLight],
+    [2739, 372, 0, yellowLight],
 ];
 
 function building_trafficLight() {
