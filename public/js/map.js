@@ -186,6 +186,7 @@ function building_road() {
         [3260, 1592, 100, '35road'],
         [2740, 1910, 107.2, '780road'],
         [3248, 2072, 107.2, '400road'],
+
         [3252, 1510, 0, '35road'],
         [3268, 1492, 90, '35road'],
         [3268, 1527, 90, '35road'],
@@ -361,12 +362,39 @@ var trafficLight_position = [
     [1817, 1049, 110, greenLight],
     [1832, 1088, 10, greenLight],
     [1801, 1110, 110, greenLight],
+    //f
+    [1689, 1560, 10, greenLight],
+    [1710, 1545, 105, greenLight],
+    [1726, 1573, 10, greenLight],
+    //g 
+    [2528, 1326, 108, greenLight],
+    [2557, 1300, 17, greenLight],
+    [2548, 1260, 108, greenLight],
+    [2521, 1287, 17, greenLight],
+    //y
+    [3050, 910, -20, greenLight],
+    [3023, 896, 100, greenLight],
+    [3007, 909, -18, greenLight],
+    [3036, 930, 90, greenLight],
+    //ae
+    [2791, 438, 85, greenLight],
+    [2768, 453, 10, greenLight],
+    [2807, 456, 10, greenLight],
+    [2784, 472, 90, greenLight],
 
 ];
 
 var trafficLightImg_position = [
     //e
-    [1775, 982, 0, greenLight]
+    [1775, 982, 0, greenLight],
+    //f
+    [1676, 1472, 0, greenLight],
+    //g
+    [2510, 1189, 0, greenLight],
+    //y
+    [3061, 838, 0, greenLight],
+    //ae
+    [2739, 372, 0, greenLight],
 ];
 
 function building_trafficLight() {
