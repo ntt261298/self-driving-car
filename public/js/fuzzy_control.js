@@ -392,6 +392,7 @@ function choosing_distance_trafficlight_speed_rules(distance, light_distance, li
                 result_numerator += weight*result;
                 result_denominator += weight
             }
+            must_stop = close_distance(light_distance) === 1 && lock_signal === true
         }
     }
     if(is_red(light_status)){
@@ -871,7 +872,7 @@ function rule34(distance, light_distance, light_status){
     var u_D  = far_distance(distance);
 
     var u = Math.min(u_LD, u_LS, u_D)
-    result = fast_speed(u);
+    result = slow_speed(u);
     
     return [u_LD*u_LS*u_D, result]
 }
@@ -882,7 +883,7 @@ function rule35(distance, light_distance, light_status){
     var u_D  = medium_distance(distance);
 
     var u = Math.min(u_LD, u_LS, u_D)
-    result = medium_speed(u);
+    result = slow_speed(u);
     
     return [u_LD*u_LS*u_D, result]
 }
