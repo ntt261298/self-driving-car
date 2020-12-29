@@ -418,7 +418,7 @@ function create_trafficLight(light_map) {
     light.anchor.set(0.5);
     light.scale.set(0.5);
 
-    light.animations.add('light', light_map[3], 2, true); // 1 = 1 frames in a second
+    light.animations.add('light', light_map[3], 1, true); // 1 = 1 frames in a second
     light.animations.play('light');
 
     game.physics.p2.enable(light, false);
@@ -436,7 +436,7 @@ function create_trafficLightImg(light_map) {
     light.anchor.set(0.5);
     light.scale.set(1);
 
-    light.animations.add('light', light_map[3], 2, true); // 1 = 1 frames in a second
+    light.animations.add('light', light_map[3], 1, true); // 1 = 1 frames in a second
     light.animations.play('light');
 
     game.physics.p2.enable(light, false);
@@ -456,16 +456,16 @@ var obstacle3;
 var obstacle4;
 
 function creating_obstacles() {
-    obstacle1 = game.add.sprite(200, 200, 'obstacle');
+    obstacle1 = game.add.sprite(50, 300, 'obstacle');
     obstacle1.scale.set(0.25);
 
-    obstacle2 = game.add.sprite(200, 300, 'obstacle');
+    obstacle2 = game.add.sprite(150, 300, 'obstacle');
     obstacle2.scale.set(0.25);
 
-    obstacle3 = game.add.sprite(200, 400, 'obstacle');
+    obstacle3 = game.add.sprite(250, 300, 'obstacle');
     obstacle3.scale.set(0.25);
 
-    obstacle4 = game.add.sprite(200, 500, 'obstacle');
+    obstacle4 = game.add.sprite(350, 300, 'obstacle');
     obstacle4.scale.set(0.25);
 
     game.physics.p2.enable([obstacle1, obstacle2, obstacle3, obstacle4], false);
