@@ -61,21 +61,58 @@ function set_up_screen() {
     creating_obstacles();
 
     // Goal
-    creating_goal(200, 800);
+    creating_goal(200, 400);
 
     // Auto car
-    creating_autocar(200, 650, 90);
+    creating_autocar(650, 692, 100);
+
+    // Point positions
+    // [489.4, 1183.9], //a
+    // [628.9, 692.6], //b
+    // [1230.2, 862.8], //c
+    // [1102.6, 1391], //d
+    // [1805.5, 1090.1], //e
+    // [1706.5, 1565.9], //f
+    // [2540.7, 1292], //g
+    // [2389.2, 1783.2], //h
+    // [3087.5, 1993.3], //i
+    // [3191.8, 1485.3], //k
+    // [3211.6, 1446.7], //m
+    // [3331.7, 1425.4], //n
+    // [3358.6, 1455.5], //o
+    // [3291.8, 1596.7], //p
+    // [3225.1, 1591.5], //q
+    // [3401.3, 2097.6], //r
+    // [4300.7, 1246.5], //s
+    // [3319.7, 1756.9], //t
+    // [3705.2, 1366], //u
+    // [3913.6, 689], //v
+    // [3617.1, 1066.9], //w
+    // [3120.6, 1204.1], //x
+    // [3025.6, 915.8], //y
+    // [3536.9, 784.1], //z
+    // [3650.8, 116.6], //aa
+    // [3358.9, 169.4], //ab
+    // [2880.2, 219.4], //ac
+    // [2800.7, 226.2], //ad
+    // [2789.9, 458], //ae
+    // [2890.9, 450.4], //af
+    // [2680.2, 805.8], //ag
+    // [2600.5, 1088.8], //ah
+    // [1854.5, 828], //ai
+    // [1921, 330.2], //ak
+    // [1961.8, 90], //am
 
     // Findding way button
-    var button = game.add.button(48, 1300, 'find', findingWayOnClick, this);
+    var button = game.add.button(48, 500, 'find', findingWayOnClick, this);
     button.scale.set(0.8);
 
     // Run
-    var button = game.add.button(48, 1500, 'run', startOnClick, this);
+    var button = game.add.button(48, 650, 'run', startOnClick, this);
     button.scale.set(0.8);
 
     //Reload
-    var button = game.add.button(48, 1700, 'reload', reloadOnClick, this);
+    var button = game.add.button(48, 800, 'reload', reloadOnClick, this);
     button.scale.set(0.8);
     
 
