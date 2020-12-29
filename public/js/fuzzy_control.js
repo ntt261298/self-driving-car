@@ -966,10 +966,10 @@ function close_distance(d) {
 // traffic light
 function green_light(light_status) {
     var u = 0
-    if (light_status <= 5){
+    if (light_status <= 8){
         u = 1;
     }else {
-        u = (10-light_status)/5;
+        u = (10-light_status)/2;
     }
 
     return u
@@ -977,19 +977,19 @@ function green_light(light_status) {
 function lessgreen_light(light_status) {
     var u = 0
     if (light_status <= 10){
-        u = (light_status-5)/5;
+        u = (light_status-8)/2;
     }else {
-        u = (15-light_status)/5;
+        u = (12-light_status)/2;
     }
 
     return u
 }
 function red_light(light_status) {
     var u = 0
-    if (light_status >= 25){
+    if (light_status >= 14){
         u = 1;
     }else {
-        u = (light_status-15)/5;
+        u = (light_status-12)/2;
     }
 
     return u
@@ -997,10 +997,10 @@ function red_light(light_status) {
 
 function yellow_light(light_status) {
     var u = 0
-    if (light_status <= 15){
-        u = (light_status-10)/5;
+    if (light_status <= 12){
+        u = (light_status-10)/2;
     }else {
-        u = (20-light_status)/5;
+        u = (14-light_status)/2;
     }
 
     return u
@@ -1008,16 +1008,16 @@ function yellow_light(light_status) {
 
 // ---
 function is_red(ls) {
-    return ls > 15
+    return ls > 12
 }
 function is_yellow(ls) {
-    return ls < 20 && ls  > 10
+    return ls < 14 && ls  > 10
 }
 function is_green(ls) {
     return ls < 10
 }
 function is_lessgreen(ls) {
-    return ls < 15 && ls > 5
+    return ls < 12 && ls > 8
 }
 
 function is_close (d) {
